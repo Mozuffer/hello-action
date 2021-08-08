@@ -7,8 +7,7 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout
-        run: ls -ltr
+      - uses: action/checkout@v2
   ubuntu:
     runs-on: ubuntu-latest
     steps:
