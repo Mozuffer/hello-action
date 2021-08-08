@@ -15,9 +15,13 @@ jobs:
       - name: run date cmd
         run: date
   macos:
-    needs: ubuntu
     runs-on: macos-latest
     steps:
       - name: run date cmd
         run: date
+  depends:
+    needs: [ubuntu, window, macos]
+    runs-on: macos-10.15
+    steps:
+      - run: date
 
