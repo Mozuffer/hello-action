@@ -16,7 +16,7 @@ jobs:
       - name: golang version
         run: go version
       - name: install jq 
-        run: apt-get install jq -y
+        run: sudo apt-get install jq -y
       - name: build 
         run: go build -o ${{ env.FILE_NAME }} ${{ env.FILE_NAME }}.go
       - name: upload artifact for linux 
