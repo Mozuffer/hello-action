@@ -5,25 +5,9 @@ on:
       - master
 jobs:
   checkout:
-    env:
-      FILE_NAME: hello-server
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@v2.3.4
       - name: list content
         run: ls -l
-      - name: golang version
-        run: go version
-      - name: install jq 
-        run: sudo apt-get install jq -y
-      - name: build 
-        run: go build -o ${{ env.FILE_NAME }} ${{ env.FILE_NAME }}.go
-      - name: upload artifact for linux 
-        uses: actions/upload-artifact@v2.2.4
-        with:
-          name: linux 
-          path: ./${{ env.FILE_NAME }}
-      - name: run jq
-        run: jq --help 
-
