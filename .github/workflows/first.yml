@@ -5,6 +5,8 @@ on:
       - master
 jobs:
   checkout:
+    env:
+      FILE_NAME: hello-server
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
@@ -13,18 +15,10 @@ jobs:
         run: ls -l
       - name: golang version
         run: go version
-  ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - name: run date cmd
-        run: date
-  window:
-    runs-on: windows-latest
-    steps:
-      - name: run date cmd
-        run: date
-  macos:
-    runs-on: macos-latest
-    steps:
-      - name: run date cmd
-        run: date
+      - name: build 
+        run: go build -o ${{ env.FILE_NAME }}.go
+      - name: upload artifact for linux 
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: linux 
+          path: ${{FILE_NAME}}
