@@ -24,4 +24,9 @@ jobs:
     runs-on: macos-10.15
     steps:
       - run: date
+  list:
+    needs: depends
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -ltr
 
