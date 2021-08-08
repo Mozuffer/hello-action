@@ -25,5 +25,5 @@ jobs:
           name: linux 
           path: ./${{ env.FILE_NAME }}
       - name: run jq
-        run: jq 
+        run: jq --help 
 
