@@ -2,7 +2,7 @@ name: first
 on: 
   push:
     branches:
-      - master
+      - dev
 jobs:
   job1:
     name: First Job
