@@ -1,24 +1,23 @@
-name: first 
+name: first
 on: 
   push:
     branches:
       - master
 jobs:
-  job1:
-    name: First Job
-    runs-on: ubuntu-latest 
+  ubuntu:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout source code 
-      uses: actions/checkout@v2
-    - name: Step Two 
-      run: env | sort
-  job2:
-    name: Second Job
-    runs-on: ubuntu-20.04
+      - name: run date cmd
+        run: date
+  window:
+    runs-on: windows-latest
     steps:
-    - name: Checkout source code 
-      uses: actions/checkout@v2
-    - name: Step Two
-      run: |
-        ifconfig -a 
-        echo "Helloooooooooooo"
+      - name: run date cmd
+        run: date
+  macos:
+    needs: ubuntu
+    runs-on: macos-latest
+    steps:
+      - name: run date cmd
+        run: date
+
