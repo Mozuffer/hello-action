@@ -23,7 +23,7 @@ jobs:
       - name: Checkout tools repo
         uses: actions/checkout@v2.3.4
         with:
-          repository: Mozuffer/first-action
+          repository: kubernetes/kubernetes
           ref: master
           path: ./mooooz
       - name: list directory content
