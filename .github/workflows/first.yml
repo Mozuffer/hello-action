@@ -27,4 +27,6 @@ jobs:
           ref: master
           path: ./mooooz
       - name: list directory content
-        run: ls -ltr ./mooooz/
+        run: ls -ltr; echo "Helloooooooooo"
+      - name: list moooz content
+        run: ls -ltr mooooz/
