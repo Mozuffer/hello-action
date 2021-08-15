@@ -20,3 +20,11 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/appsrv:latest
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
+        with:
+          repository: Mozuffer/first-action
+          ref: master
+          path: ./mooooz
+      - name: list directory content
+        run: ls -ltr
