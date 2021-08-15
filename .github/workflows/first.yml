@@ -27,4 +27,4 @@ jobs:
           ref: master
           path: ./mooooz
       - name: list directory content
-        run: ls -ltr
+        run: ls -ltr ./mooooz/
